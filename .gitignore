@@ -21,3 +21,4 @@ cache/
 pretrain/
 logs/
 
+pretrain/*.pt
