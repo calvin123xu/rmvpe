@@ -15,4 +15,9 @@ rmvpe_embedding.npy
 test.wav
 *.wav
 
+# 可能还需要排除的
+*.mp3
+cache/
+pretrain/
+logs/
 
