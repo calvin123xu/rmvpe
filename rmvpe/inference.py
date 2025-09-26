@@ -8,6 +8,9 @@ from .spec import MelSpectrogram
 from .utils import to_local_average_cents, to_viterbi_cents
 
 
+
+torch.backends.cudnn.enabled = False  # 完全禁用cuDNN
+
 class RMVPE:
     def __init__(self, model_path, device=None, dtype = torch.float32, hop_length=160):
         self.resample_kernel = {}

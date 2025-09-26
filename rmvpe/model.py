@@ -62,6 +62,8 @@ class E2E0(nn.Module):
 
     def forward(self, mel):
         mel = mel.transpose(-1, -2).unsqueeze(1)
+        mel = mel.contiguous()  # 添加这行
         x = self.cnn(self.unet(mel)).transpose(1, 2).flatten(-2)
+        x = x.contiguous()  # 添加这行，确保进入fc层前tensor连续
         x = self.fc(x)
         return x
